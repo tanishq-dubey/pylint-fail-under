@@ -42,7 +42,7 @@ def main():
             score = results.linter.stats["global_note"]
         except KeyError:
             logger.error("no score parsed from Pylint output")
-            exit_code = NO_SCORE_PARSED
+            exit_code = SUCCESS
         else:
             if score < fail_under_value:
                 logger.error("score %s is less than fail-under value %s", score, fail_under_value)
